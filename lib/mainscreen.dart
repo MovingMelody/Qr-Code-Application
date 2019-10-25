@@ -8,7 +8,7 @@ class MainScreen extends StatefulWidget {
 }
 
 class _MainScreenState extends State<MainScreen> {
-  static const double _topSectionTopPadding = 50.0;
+  static const double _topSectionTopPadding = 38.0;
   static const double _topSectionBottomPadding = 20.0;
   static const double _topSectionHeight = 50.0;
 
@@ -23,7 +23,11 @@ class _MainScreenState extends State<MainScreen> {
         title: Text('Generate QR'),
         actions: <Widget>[
           IconButton(
-            icon: Icon(Icons.scanner),
+            icon:Icon(Icons.scanner),
+            onPressed:(){},
+          ),
+          IconButton(
+            icon: Icon(Icons.people),
             onPressed:(){
               Navigator.of(context).pushNamed('/scanner');
             },
@@ -52,7 +56,7 @@ class _MainScreenState extends State<MainScreen> {
                 padding: const EdgeInsets.all(90.0),
                 child: QrImage(
                   data: _dataString,
-                  gapless: true,
+                  gapless: false,
                   version: 2,
                   foregroundColor: const Color(0xFF000000),
                   onError: (dynamic ex) {
@@ -86,15 +90,17 @@ class _MainScreenState extends State<MainScreen> {
                       decoration: InputDecoration(
                         border: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(20.0)),
-                        hintText: 'Enter a your text',
+                        hintText: 'Enter some text to convert this to qr code',
                         errorText: _inputErrorText,
                       ),
                     ),
                   ),
                   Padding(
+
                     padding: const EdgeInsets.only(left: 10.0,),
                     child: RaisedButton(
                       color: Colors.red,
+
                       child: const Text('GENERATE'),
                       onPressed: () {
                         setState(() {
