@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:qrcodemaster/mainscreen.dart';
 import 'qr_scanner.dart';
+var routes = <String, WidgetBuilder>{
+  '/scanner' : (BuildContext context) => new MyHomePage(),
+};
 
 void main() => runApp(MyApp());
 class MyApp extends StatelessWidget {
@@ -14,9 +17,7 @@ class MyApp extends StatelessWidget {
       color: Colors.deepPurple,
       theme: ThemeData(primarySwatch: Colors.deepOrange),
       home: MainScreen(),
-      routes: <String,WidgetBuilder>{
-        '/scanner' : (BuildContext context) => new MyHomePage(),
-      }
+      routes: routes,
     );
   }
 }
