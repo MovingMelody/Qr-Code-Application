@@ -33,7 +33,7 @@ class _SettingsPageState extends State<SettingsPage> {
                     CircleAvatar(
                       radius: 30.0,
                       backgroundImage: Image.network(
-  'https://picsum.photos/250?image=9',
+  'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fimages.pexels.com%2Fphotos%2F1944%2Flights-abstract-curves-long-exposure.jpg%3Fcs%3Dsrgb%26dl%3Dabstract-curves-led-1944.jpg%26fm%3Djpg&f=1&nofb=1',
 )
 ,
                     ),
@@ -96,6 +96,16 @@ class _SettingsPageState extends State<SettingsPage> {
                     ),
                     ListTile(
                       leading: Icon(
+                        Icons.alarm,
+                        color: Colors.blue,
+                      ),
+                      title: Text("Scanned"),
+                      onTap: (){},
+                      trailing: Icon(Icons.arrow_right),
+                    ),
+                    
+                    ListTile(
+                      leading: Icon(
                         Icons.info,
                         color: Colors.lightGreen,
                       ),
@@ -103,16 +113,8 @@ class _SettingsPageState extends State<SettingsPage> {
                       onTap: (){},
                       trailing: Icon(Icons.arrow_right),
                     ),
-                    Divider(color: Colors.grey,),
-                    ListTile(
-                      leading: Icon(
-                        Icons.help,
-                        color: Colors.greenAccent,
-                      ),
-                      onTap: (){},
-                      title: Text("Help"),
-                      trailing: Icon(Icons.arrow_right),
-                    )
+                    Divider(color: Colors.green,),
+                    
                   ],
                 ),
 ),
